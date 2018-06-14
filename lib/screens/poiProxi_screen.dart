@@ -48,11 +48,11 @@ class PoiProxiState extends State<PoiProxi>{
                 for (var item in snapshot.data) {
                   textlist.add(new Card(
                    child: new ListTile(
-                     leading: new Text(item['algo'] + "km"),
-                     title: new Text(item['oeie']),
-                      subtitle: new Text(item['ft_libelle_commune']),
+                     leading: new Text(item['algo'] != null ? item['algo'] : "0" + "km"),
+                     title: new Text(item['oeie'] != null ? item['oeie'] : ""),
+                      subtitle: new Text(item['ft_libelle_commune'] != null ? item['ft_libelle_commune'] : ""),
                       dense: true,
-                      trailing: new Text(item['domaine']),
+                      trailing: new Text(item['domaine'] != null ? item['domaine'] : ""),
                       onTap:(){_neverSatisfied(item['oeie'],item['ft_commentaire_creation_oeie']);},
                    ),
                  ));
