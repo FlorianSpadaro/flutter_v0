@@ -83,6 +83,9 @@ class HomeScreenState extends State<HomeScreen>{
                                         lastDate: date.add(const Duration(days: 3000))
                                       ).then((DateTime value){
                                         singleton.addPlanifDateByPoiId(item["id"], value);
+                                        PoiId_singleton poiIdSingleton = new PoiId_singleton();
+                                        poiIdSingleton.id = item["id"];
+                                        Navigator.of(context).pushNamed("/poiProxiPlanif");
                                       });},
                                       ),
                                       new OutlineButton(
@@ -104,7 +107,7 @@ class HomeScreenState extends State<HomeScreen>{
                     );
                     }
                     else{
-                      return new Text("Aucune POI à l'état 5");
+                      return new Text("Aucune POI à l'état 1");
                     }
                   }
                   else if(snapshot.hasError){
@@ -156,7 +159,12 @@ class HomeScreenState extends State<HomeScreen>{
                                         initialDate: date,
                                         firstDate: date.subtract(const Duration(days: 1)),
                                         lastDate: date.add(const Duration(days: 3000))
-                                      ).then((DateTime value){singleton.addPlanifDateByPoiId(item["id"], value);});},
+                                      ).then((DateTime value){
+                                        singleton.addPlanifDateByPoiId(item["id"], value);
+                                        PoiId_singleton poiIdSingleton = new PoiId_singleton();
+                                        poiIdSingleton.id = item["id"];
+                                        Navigator.of(context).pushNamed("/poiProxiPlanif");
+                                        });},
                                       ),
                                       new OutlineButton(
                                         child: const Text('ALLER'),
@@ -229,7 +237,12 @@ class HomeScreenState extends State<HomeScreen>{
                                         initialDate: date,
                                         firstDate: date.subtract(const Duration(days: 1)),
                                         lastDate: date.add(const Duration(days: 3000))
-                                      ).then((DateTime value){singleton.addPlanifDateByPoiId(item["id"], value);});},
+                                      ).then((DateTime value){
+                                        singleton.addPlanifDateByPoiId(item["id"], value);
+                                        PoiId_singleton poiIdSingleton = new PoiId_singleton();
+                                        poiIdSingleton.id = item["id"];
+                                        Navigator.of(context).pushNamed("/poiProxiPlanif");
+                                        });},
                                       ),
                                       new OutlineButton(
                                         child: const Text('ALLER'),
@@ -309,7 +322,12 @@ class HomeScreenState extends State<HomeScreen>{
                                               initialDate: date,
                                               firstDate: date.subtract(const Duration(days: 1)),
                                               lastDate: date.add(const Duration(days: 3000))
-                                            ).then((DateTime value){singleton.addPlanifDateByPoiId(item["id"], value);});},
+                                            ).then((DateTime value){
+                                              singleton.addPlanifDateByPoiId(item["id"], value);
+                                              PoiId_singleton poiIdSingleton = new PoiId_singleton();
+                                              poiIdSingleton.id = item["id"];
+                                              Navigator.of(context).pushNamed("/poiProxiPlanif");
+                                              });},
                                             ),
                                             new OutlineButton(
                                               child: const Text('ALLER'),

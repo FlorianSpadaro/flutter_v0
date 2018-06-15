@@ -5,6 +5,7 @@ import 'package:test_login/screens/detailsPoi_screen.dart';
 import 'package:test_login/screens/startMenu_screen.dart';
 import 'package:test_login/screens/kpi_screen.dart';
 import 'package:test_login/screens/poiProxi_screen.dart';
+import 'package:test_login/screens/poiProxiPlanif_screen.dart';
 
 final routes = {
   '/': (BuildContext context) => new MyForm(),
@@ -14,4 +15,5 @@ final routes = {
   '/startMenu': (BuildContext context) => new StartMenu(),
   '/kpi': (BuildContext context) => new KpiMenu(),
   '/poiProxi': (BuildContext context) => new PoiProxi(),
+  '/poiProxiPlanif': (BuildContext context) => new PoiProxiPlanif()
 };

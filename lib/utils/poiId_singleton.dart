@@ -12,7 +12,7 @@ class PoiId_singleton{
   }
   PoiId_singleton.internal();
 
-  Future getPoiById()
+  Future getPoiById() async
   {
     RestDatasource restDatasource = new RestDatasource();
     return restDatasource.getPoiById(id);

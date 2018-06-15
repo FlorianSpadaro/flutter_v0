@@ -21,7 +21,6 @@ class RestDatasource {
     }).then((dynamic res){
       if(res != null)
       {
-        print(res.toString());
         return new User.map(res);
       }
       else{
