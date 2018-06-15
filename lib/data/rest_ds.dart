@@ -12,6 +12,7 @@ class RestDatasource {
   static final poiRetard = baseUrl + "/getPoiRetardByCaff.php";
   static final poiById = baseUrl + "/getPoiById.php";
   static final addPlanif = baseUrl + "/addPlanifDateByPoiId.php";
+  static final poiDateCaff = baseUrl + "/getPoiByDateByCaff.php";
 
   Future<User> login(String username, String password){
     return _netUtil.post(loginUrl, body: {
@@ -70,6 +71,22 @@ class RestDatasource {
     return _netUtil.post(addPlanif, body:{
       "poi_id": poiId.toString(),
       "date_planif": myDate
+    });
+  }
+
+  Future getPoiByDateByCaff(DateTime date, int caffId) async
+  {
+    String myDate;
+    if(date.toString().length > 0)
+    {
+      myDate = date.toString().substring(0, 10);
+    }
+    else{
+      myDate = "";
+    }
+    return _netUtil.post(poiDateCaff, body: {
+      "date": myDate,
+      "caff_id": caffId.toString()
     });
   }
 }

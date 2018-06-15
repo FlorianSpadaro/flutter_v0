@@ -68,4 +68,10 @@ class Singleton{
     RestDatasource restDatasource = new RestDatasource();
     return restDatasource.addPlanifDateByPoiId(poiId, date);
   }
+
+  Future getPoiByDate(DateTime date) async
+  {
+    RestDatasource restDatasource = new RestDatasource();
+    return restDatasource.getPoiByDateByCaff(date, user.employeeId);
+  }
 }
